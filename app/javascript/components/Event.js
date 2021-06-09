@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Event = ({ event }) => (
+const Event = ({ event, onDelete }) => (
   <div className="eventContainer">
     <h2>
       {event.event_date}
       {' - '}
       {event.event_type}
+      {' '}
       <button className="delete" type="button" onClick={() => onDelete(event.id)}>
         Delete
       </button>
