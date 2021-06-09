@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Event = ({ event, onDelete }) => (
   <div className="eventContainer">
-    <h2>
-      {event.event_date}
-      {' - '}
-      {event.event_type}
-      {' '}
-      <button className="delete" type="button" onClick={() => onDelete(event.id)}>
-        Delete
-      </button>
-    </h2>
+  <h2>
+    {event.event_date}
+    {' - '}
+    {event.event_type}
+    {' '}
+    <Link to={`/events/${event.id}/edit`}>Edit</Link>
+    <button className="delete" type="button" onClick={() => onDelete(event.id)}>
+      Delete
+    </button>
+  </h2>
     <ul>
       <li>
         <strong>Type:</strong>
